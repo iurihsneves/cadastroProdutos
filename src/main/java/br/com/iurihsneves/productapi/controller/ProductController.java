@@ -2,6 +2,8 @@ package br.com.iurihsneves.productapi.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +47,7 @@ public class ProductController {
     }
 
     @PostMapping("/product/save")
-    public ProductDto save(@RequestBody ProductDto productDto) {
+    public ProductDto save(@Valid @RequestBody ProductDto productDto) {
 
         return productService.save(productDto);
 
